@@ -1,31 +1,3 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-  <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item dropdown">
-          <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://cdn.pixabay.com/photo/2014/10/18/22/26/squirrel-493790_1280.jpg" />
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure to quit this session?'}, class: "dropdown-item" %>
-            <%= link_to "Dashboard", projects_path, class: "dropdown-item" %>
-          </div>
-        </li>
-      </ul>
-    </div>
-</div>
-
-
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1504006833117-8886a355efbf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)">
   <div class=banner-container>
     <h1>Welcome to Scurious</h1>
@@ -52,7 +24,7 @@
       <img src="images/apply.svg" alt="">
       <h4>Project ideas Maker</h4>
       <p>"I have a dream" is what you're saying ?
-      link_to "Share it here", NEW-PROJECT-LINK to make it real ✨</p>
+      <%= link_to "Share it here", new_project_path %> to make it real ✨</p>
       <a></a>
     </div>
 
