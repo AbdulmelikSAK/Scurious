@@ -1,0 +1,41 @@
+a.btn-menu {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 15px 10px;
+  border: 1.5px solid gray;
+  border-radius: 2px;
+  text-decoration: none;
+  vertical-align: middle;
+  color: gray;
+  font-weight: 400;
+  text-align: center;
+  background-color: transparent;
+  line-height: 1.5;
+  cursor: pointer;
+  &:hover {
+    color: black;
+    border-color: black;
+  }
+}
+
+a.btn-apply {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 15px 10px;
+  border: 1.5px solid green;
+  border-radius: 2px;
+  text-decoration: none;
+  vertical-align: middle;
+  color: green;
+  font-weight: 400;
+  text-align: center;
+  background-color: transparent;
+  line-height: 1.5;
+  cursor: pointer;
+  &:hover {
+    color: black;
+    border-color: green;
+    background-color: green;
+    opacity: 0.6;
+  }
+}

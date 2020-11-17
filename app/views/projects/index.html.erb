@@ -7,19 +7,24 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item dropdown">
-        <%= image_tag "https://cdn.pixabay.com/photo/2014/10/18/22/26/squirrel-493790_1280.jpg", class: "avatar" %>
-      </li>
-    </ul>
-  </div>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item dropdown">
+          <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://cdn.pixabay.com/photo/2014/10/18/22/26/squirrel-493790_1280.jpg" />
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure to quit this session?'}, class: "dropdown-item" %>
+            <%= link_to "Dashboard", projects_path, class: "dropdown-item" %>
+          </div>
+        </li>
+      </ul>
+    </div>
 </div>
+
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1504006833117-8886a355efbf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)">
   <div class=banner-container>
@@ -43,18 +48,18 @@
   <h2 class="text-center">What's in it for you ?</h2>
 
   <div class="cards">
-
     <div class="card">
       <img src="images/apply.svg" alt="">
       <h4>Project ideas Maker</h4>
-      <p>"I have a dream" is what you're saying ? Share it here to make it real 👇</p>
+      <p>"I have a dream" is what you're saying ?
+      link_to "Share it here", NEW-PROJECT-LINK to make it real ✨</p>
       <a></a>
     </div>
 
     <div class="card">
       <img src="images/learn.svg" alt="">
       <h4>Developer</h4>
-      <p>Pratice makes perfect and you want to thrive </p>
+      <p>Pratice makes perfect and you want to thrive into your code 🚀</p>
     </div>
 
     <div class="card">
@@ -62,18 +67,37 @@
       <h4>Angel Investor</h4>
       <p>What's best than investing your money into fruitful ideas 🍏 </p>
     </div>
+  </div>
+</div>
+
+<div class="projects-container">
+  <div class="cards">
+
+        <% @projects.each do |project| %>
+          <div class="project-card">
+          <h4><%= link_to project.title, project_path(project)%></h4>
+          <p><%= project.description %></p>
+          </div>
+        <% end %>
 
   </div>
 </div>
 
-  <!-- code a footer -->
+
+
+
+
+  <div class="bottom-page">
+    <%= link_to 'Back to the top', root_path %>
+  </div>
+  <!-- footer -->
   <div class="footer">
       <div class="links">
         <a href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
         <a href="#"><i class="fab fa-fw fa-github"></i></a>
         <a href="#"><i class="fab fa-fw fa-twitter"></i></a>
         <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
-        <p>Much <i class="fas fa-heart"></i> was put into this website.</p>
+        <p>This website was created with passion  🐿  <i class="fas fa-heart"></i> </p>
       </div>
   </div>
 </div>
