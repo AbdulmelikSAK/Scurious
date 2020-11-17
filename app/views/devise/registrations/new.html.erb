@@ -16,6 +16,11 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :profile,
+                required: true %>
+    <%= f.input :role,
+                collection: %w[creator developer angel],
+                required: true %>
   </div>
 
   <div class="form-actions">
