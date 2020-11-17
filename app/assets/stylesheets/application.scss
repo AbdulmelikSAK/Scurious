@@ -11,3 +11,41 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  margin: 0;
+  font-family: Work sans;
+}
+
+h1, h2, h3, h4 {
+  font-family: Nunito;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 900px;
+  margin: 0 auto;
+}
+.footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #2c2b2b;
+}
+
+.links p {
+  color: white;
+  font-size: 14px;
+}
+
+.links a {
+  color: #1EDD88;
+  width: 30px;
+  font-size: 18px;
+}
+
+.links .fa-heart {
+  color: red;
+}
