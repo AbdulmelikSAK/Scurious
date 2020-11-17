@@ -1,1 +1,79 @@
-<h1>Bienvenue sur Scurious 🐿</h1>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to "#", class: "navbar-brand" do %>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item dropdown">
+        <%= image_tag "https://cdn.pixabay.com/photo/2014/10/18/22/26/squirrel-493790_1280.jpg", class: "avatar" %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1504006833117-8886a355efbf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)">
+  <div class=banner-container>
+    <h1>Welcome to Scurious</h1>
+    <div class="slogan">
+      <h4>Where curiosity pushes ideas <br> to become reality</h4>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+    <div class="search-form-control form-group">
+      <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Search a project here" />
+      <button name="button" type="submit" class="btn btn-flat">
+        <i class="fas fa-search"></i> Search
+      </button>
+    </div>
+  <% end %>
+
+  <h2 class="text-center">What's in it for you ?</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <img src="images/apply.svg" alt="">
+      <h4>Project ideas Maker</h4>
+      <p>"I have a dream" is what you're saying ? Share it here to make it real 👇</p>
+      <a></a>
+    </div>
+
+    <div class="card">
+      <img src="images/learn.svg" alt="">
+      <h4>Developer</h4>
+      <p>Pratice makes perfect and you want to thrive </p>
+    </div>
+
+    <div class="card">
+      <img src="images/product.svg" alt="">
+      <h4>Angel Investor</h4>
+      <p>What's best than investing your money into fruitful ideas 🍏 </p>
+    </div>
+
+  </div>
+</div>
+
+  <!-- code a footer -->
+  <div class="footer">
+      <div class="links">
+        <a href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-fw fa-github"></i></a>
+        <a href="#"><i class="fab fa-fw fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
+        <p>Much <i class="fas fa-heart"></i> was put into this website.</p>
+      </div>
+  </div>
+</div>
