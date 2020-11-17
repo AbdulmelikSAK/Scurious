@@ -7,19 +7,24 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item dropdown">
-        <%= image_tag "https://cdn.pixabay.com/photo/2014/10/18/22/26/squirrel-493790_1280.jpg", class: "avatar" %>
-      </li>
-    </ul>
-  </div>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item dropdown">
+          <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://cdn.pixabay.com/photo/2014/10/18/22/26/squirrel-493790_1280.jpg" />
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure to quit this session?'}, class: "dropdown-item" %>
+            <%= link_to "Dashboard", projects_path, class: "dropdown-item" %>
+          </div>
+        </li>
+      </ul>
+    </div>
 </div>
+
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1504006833117-8886a355efbf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)">
   <div class=banner-container>
@@ -82,7 +87,9 @@
 
 
 
-
+  <div class="bottom-page">
+    <%= link_to 'Back to the top', root_path %>
+  </div>
   <!-- footer -->
   <div class="footer">
       <div class="links">

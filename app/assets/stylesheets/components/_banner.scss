@@ -23,3 +23,16 @@
   align-content: right;
 }
 
+.project-banner {
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.project-banner h2 {
+  color: white;
+  text-align: center;
+}
