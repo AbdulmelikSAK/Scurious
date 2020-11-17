@@ -4,9 +4,11 @@
       <h1>Your application</h1>
 
       <%= simple_form_for [@project, @candidate] do |f| %>
+      <div class="form-inputs">
         <%= f.input :status %>
         <%= f.input :message %>
         <%= f.submit "Send your application", class: 'btn btn-primary btn-block btn-large' %>
+      </div>
       <% end %>
     </div>
   </div>
