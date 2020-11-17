@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     resources :candidates, only: [:new, :create]
   end
   root to: 'projects#index'
+  get 'api/:search', to: 'projects#api', as: :api
 end
