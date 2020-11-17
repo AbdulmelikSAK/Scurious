@@ -8,19 +8,10 @@
 </div>
 
 <div class="container">
-  <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-    <div class="search-form-control form-group">
-      <input class="form-control string required" id="search_query" type="text" name="search[query]" placeholder="Search a project here" />
-      <ul id="results"></ul>
-      <button name="button" type="submit" class="btn btn-flat">
-        <i class="fas fa-search"></i> Search
-      </button>
-    </div>
-  <% end %>
 
   <h2 class="text-center">What's in it for you ?</h2>
 
-  <div class="cards">
+  <div class="cards flex-wrap d-flex justify-content-around">
     <div class="card">
       <img src="images/apply.svg" alt="">
       <h4>Project ideas Maker</h4>
@@ -43,15 +34,24 @@
   </div>
 </div>
 
-<div class="projects-container">
-  <div class="cards">
+<div class="projects-container text-center">
+  <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+    <div id="search-data" class="search-form-control form-group mx-5">
+      <input class="form-control string required" id="search-input" type="text" name="search[query]" placeholder="Search a project here" />
+<!--       <button name="button" type="submit" class="btn btn-flat">
+        <i class="fas fa-search"></i> Search
+      </button> -->
+    </div>
+  <% end %>
 
-        <% @projects.each do |project| %>
-          <div class="project-card">
-          <h4><%= link_to project.title, project_path(project)%></h4>
-          <p><%= project.description %></p>
-          </div>
-        <% end %>
+  <div class="cards flex-wrap d-flex justify-content-around">
+
+    <% @projects.each do |project| %>
+      <div class="project-card">
+      <h4><%= link_to project.title, project_path(project)%></h4>
+      <p><%= project.description %></p>
+      </div>
+    <% end %>
 
   </div>
 </div>

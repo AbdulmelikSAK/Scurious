@@ -1,6 +1,5 @@
 class ProjectsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
-
+  skip_before_action :authenticate_user!, only: [:index, :api]
 
   def index
     @projects = Project.all
@@ -16,7 +15,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-
+    @project.title.downcase!
     if @project.save
       redirect_to @project, notice: 'A new project was successfully created.'
     else
@@ -24,7 +23,10 @@ class ProjectsController < ApplicationController
     end
   end
 
-
+  def api
+    @search = params[:search]
+    @results = Project.all.where("title LIKE ?", "%#{@search}%")
+  end
 
   private
 

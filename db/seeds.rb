@@ -24,7 +24,7 @@ puts 'Creation de 6 projets'
 
 (0..5).to_a.each do |i|
   Project.create!(
-    title: "Project#{i}",
+    title: "project#{i}",
     description: "Ceci est la description du projet#{i}",
     user: toto,
     dev: User.new,
