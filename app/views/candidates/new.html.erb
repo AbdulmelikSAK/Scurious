@@ -1,0 +1,17 @@
+
+ <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1>Your application</h1>
+
+      <%= simple_form_for [@project, @candidate] do |f| %>
+        <%= f.input :status %>
+        <%= f.input :message %>
+        <%= f.submit "Send your application", class: 'btn btn-primary btn-block btn-large' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="col-6">
+<%= link_to 'Back', root_path %>
+</div>
