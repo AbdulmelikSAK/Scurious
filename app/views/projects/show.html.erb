@@ -1,17 +1,17 @@
 <div class="project-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1508758980773-0d840264575d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)">
-
-  <div class=banner-container>
-    <h1><%= @project.title %></h1>
-</div>
+  <h1><%= @project.title %></h1>
 </div>
 
-<div class="container">
-  <div class="slogan">
-    <h3>Description</h3>
-      <p><%= @project.description %></p>
 
-    <h3>Evolution</h3>
-      <p><%= @project.evolution %></p>
+<div class="container project-info">
+  <h3>Description</h3>
+  <p><%= @project.description %></p>
+
+  <h3>Evolution</h3>
+  <p><%= @project.evolution %></p>
+
+  <div class="participation">
+  <%= link_to 'Participate to this project', root_path, class: 'btn btn-apply' %>
   </div>
 
   <div class="bottom-page">

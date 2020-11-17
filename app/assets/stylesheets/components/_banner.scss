@@ -19,20 +19,15 @@
   font-weight: bold
 }
 
-.slogan {
-  align-content: right;
-}
-
 .project-banner {
   background-size: cover;
   background-position: center;
   height: 300px;
+  width: 100%;
   display: flex;
+  text-align: center;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.project-banner h2 {
+  padding: 15px 10px;
   color: white;
-  text-align: center;
 }
