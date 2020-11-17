@@ -6,5 +6,8 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true
   validates :profile, presence: true
-  validates :role, presence: true, inclusion: { in: ["creator", "developper", "angel"] }
+  validates :role, presence: true, inclusion: { in: ["creator", "developer", "angel"] }
+
+  has_many :projects
+  has_many :candidates
 end
