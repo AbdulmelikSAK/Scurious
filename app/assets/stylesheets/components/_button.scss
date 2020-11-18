@@ -1,36 +1,30 @@
 a.btn-menu {
-  display: inline-block;
-  padding: 10px 20px;
-  margin: 15px 10px;
-  border: 1.5px solid gray;
-  border-radius: 2px;
+  width: fit-content;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border: 1.5px solid black;
   text-decoration: none;
   vertical-align: middle;
-  color: gray;
-  font-weight: 400;
-  text-align: center;
+  color: black;
   background-color: transparent;
-  line-height: 1.5;
   cursor: pointer;
   &:hover {
-    color: black;
+    color: white;
     border-color: black;
+    background-color: black;
+    opacity: 0.5;
   }
 }
 
 a.btn-apply {
-  display: inline-block;
-  padding: 10px 20px;
-  margin: 15px 10px;
+  width: fit-content;
+  padding: 10px 15px;
+  margin-bottom: 10px;
   border: 1.5px solid green;
-  border-radius: 2px;
   text-decoration: none;
   vertical-align: middle;
   color: green;
-  font-weight: 400;
-  text-align: center;
   background-color: transparent;
-  line-height: 1.5;
   cursor: pointer;
   &:hover {
     color: black;
@@ -42,18 +36,14 @@ a.btn-apply {
 
 
 a.btn-edit {
-  display: inline-block;
-  padding: 10px 20px;
-  margin: 15px 10px;
+  width: fit-content;
+  padding: 10px 15px;
+  margin-bottom: 10px;
   border: 1.5px solid orange;
-  border-radius: 2px;
   text-decoration: none;
   vertical-align: middle;
   color: orange;
-  font-weight: 400;
-  text-align: center;
   background-color: transparent;
-  line-height: 1.5;
   cursor: pointer;
   &:hover {
     color: black;
@@ -62,4 +52,3 @@ a.btn-edit {
     opacity: 0.6;
   }
 }
-
