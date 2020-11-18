@@ -1,0 +1,11 @@
+<div class="project-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1508758980773-0d840264575d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)">
+  <h1><%= @project.title %></h1>
+</div>
+
+
+<%= render './shared/form', project: @project %>
+
+  <div class="bottom-page">
+    <%= link_to 'Back to homepage', root_path, class: 'btn btn-menu' %>
+  </div>
+</div>

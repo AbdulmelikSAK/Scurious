@@ -23,6 +23,18 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def edit
+    @project = Project.find(params[:id])
+  end
+
+  def update
+    if @project.update(project_params)
+      redirect_to @project, notice: 'Your project was successfully updated.'
+    else
+      render :edit
+    end
+end
+
   def api
     @title = params[:title]
     @results = Project.all.where("title LIKE ?", "%#{@title}%")

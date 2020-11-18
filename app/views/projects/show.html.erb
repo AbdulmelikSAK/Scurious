@@ -23,7 +23,9 @@
     </div>
   <% end  %>
 
-  <div class="bottom-page">
-    <%= link_to 'Back to homepage', root_path, class: 'btn btn-menu' %>
-  </div>
+  <%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-edit' %>
+
 </div>
+    <div class="bottom-page text-center">
+      <%= link_to 'Back to homepage', root_path, class: 'btn btn-menu' %>
+    </div>
