@@ -39,3 +39,27 @@ a.btn-apply {
     opacity: 0.6;
   }
 }
+
+
+a.btn-edit {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 15px 10px;
+  border: 1.5px solid orange;
+  border-radius: 2px;
+  text-decoration: none;
+  vertical-align: middle;
+  color: orange;
+  font-weight: 400;
+  text-align: center;
+  background-color: transparent;
+  line-height: 1.5;
+  cursor: pointer;
+  &:hover {
+    color: black;
+    border-color: orange;
+    background-color: orange;
+    opacity: 0.6;
+  }
+}
+

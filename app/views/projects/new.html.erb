@@ -2,12 +2,7 @@
  <div class="row justify-content-center form-page">
     <div class="col-md-8">
       <h1>Your Project</h1>
-
-      <%= simple_form_for @project do |f| %>
-        <%= f.input :title %>
-        <%= f.input :description %>
-        <%= f.button :submit, class: 'btn btn-primary' %>
-      <% end %>
+      <%= render './shared/form', project: @project %>
     </div>
   </div>
 </div>
