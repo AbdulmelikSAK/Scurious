@@ -24,13 +24,19 @@ class ProjectsController < ApplicationController
   end
 
   def api
-    @search = params[:search]
-    @results = Project.all.where("title LIKE ?", "%#{@search}%")
+    @title = params[:title]
+    @results = Project.all.where("title LIKE ?", "%#{@title}%")
+    @display_result = @results.map do |project|
+      {
+        card: render_to_string(partial: 'projectcard', locals: { project: project })
+      }
+    end
+    render json: @display_result.to_json
   end
 
   private
 
-    def project_params
-      params.require(:project).permit(:title, :description)
-    end
+  def project_params
+    params.require(:project).permit(:title, :description)
+  end
 end
