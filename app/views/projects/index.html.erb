@@ -1,8 +1,9 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1504006833117-8886a355efbf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)">
+<div class="banner" style="background-image: url(https://images.unsplash.com/photo-1504006833117-8886a355efbf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)">
   <div class=banner-container>
-    <h1>Welcome to Scurious</h1>
+    <h1>Welcome to <em>Scurious</em></h1>
+    <br><br><br><br>
     <div class="slogan">
-      <h4>Where curiosity pushes ideas <br> to become reality</h4>
+      <h4>where curiosity <em>pushes</em> ideas <br> to become reality.</h4>
     </div>
   </div>
 </div>
@@ -13,23 +14,23 @@
 
   <div class="cards flex-wrap d-flex justify-content-around">
     <div class="card">
-      <img src="images/apply.svg" alt="">
-      <h4>Project ideas Maker</h4>
-      <p>"I have a dream" is what you're saying ?
-      <%= link_to "Share it here", new_project_path %> to make it real ✨</p>
+      <img src="https://cdn.pixabay.com/photo/2017/06/10/07/21/chat-2389223_1280.png" alt="">
+      <h4>Project ideas</h4>
+      <p>"I have a dream" is what you keep thinking ? <br>
+      <a><%= link_to "Share it here", new_project_path %></a><br>to make it real 🌿</p>
       <a></a>
     </div>
 
     <div class="card">
-      <img src="images/learn.svg" alt="">
+      <img src="https://cdn.pixabay.com/photo/2017/03/08/14/20/flat-2126876_1280.png" alt="">
       <h4>Developer</h4>
-      <p>Pratice makes perfect and you want to thrive into your code 🚀</p>
+      <p>Pratice makes perfect and you want to thrive into your code ?<br>Find projects 🚀</p>
     </div>
 
     <div class="card">
-      <img src="images/product.svg" alt="">
+      <img src="https://cdn.pixabay.com/photo/2014/04/02/16/20/lemon-306958_1280.png" alt="">
       <h4>Angel Investor</h4>
-      <p>What's best than investing your money into fruitful ideas 🍏 </p>
+      <p>What's best than investing money into fruitful ideas, it's<br>juicy here! 🍋 </p>
     </div>
   </div>
 </div>
@@ -37,7 +38,7 @@
 <div class="projects-container text-center">
   <%= simple_form_for :search, url: root_path, method: :get do |f| %>
     <div id="search-data" class="search-form-control form-group mx-5">
-      <input class="form-control string required" id="search-input" type="text" name="search[query]" placeholder="Search a project here" />
+      <input class="form-control string required text-center" id="search-input" type="text" name="search[query]" placeholder="Search a project here" />
 <!--       <button name="button" type="submit" class="btn btn-flat">
         <i class="fas fa-search"></i> Search
       </button> -->
