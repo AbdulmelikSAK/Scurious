@@ -28,12 +28,12 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-// import { searchProject } from './index.js'
+import { searchProject } from './index.js'
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   // autocompleteSearchbar();
-  // const input = document.querySelector("#search-input");
-  // input.addEventListener("keyup", searchProject);
+  const input = document.querySelector("#search-input");
+  input.addEventListener("keyup", searchProject);
 });

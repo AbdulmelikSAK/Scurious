@@ -21,24 +21,24 @@
 //   });
 // };
 
-// const results = document.querySelector('.cards');
+const results = document.querySelector('.cards-results');
 
-// const searchProject = (event) => {
-//   console.log("test")
-//   const query = event.currentTarget.value;
-//   fetch(`https://scurious.herokuapp.com/api/${query}`)
-//     .then(response => response.json())
-//     .then((data) => {
-//       results.innerHTML = '';
-//       data.forEach((project) => {
-//         const card = `<div class="project-card">
-//       <h4><%= link_to ${project["title"]}, project_path(${project["id"]})%></h4>
-//       <p><%= ${project["description"]} %></p>
-//       </div>`;
-//         results.insertAdjacentHTML("beforeend", card);
-//       });
-//     });
-// };
+const searchProject = (event) => {
+  console.log("test")
+  const query = event.currentTarget.value;
+  fetch(`/api/projects?title=${query}`)
+    .then(response => response.json())
+    .then((data) => {
+      console.log('je suis la')
+      console.log(data)
+      results.innerHTML = '';
+      console.log(results)
+      data.forEach((project) => {
+        const card = project.card;
+        results.insertAdjacentHTML("beforeend", card);
+      });
+    });
+};
 
-// export { searchProject };
+export { searchProject };
 
