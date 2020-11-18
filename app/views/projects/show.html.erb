@@ -1,5 +1,7 @@
 <div class="project-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1508758980773-0d840264575d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)">
-  <h1><%= @project.title %></h1>
+  <div class="title-container">
+    <h1><%= @project.title %></h1>
+  </div>
 </div>
 
 
@@ -10,10 +12,6 @@
   <h3>Evolution</h3>
   <p><%= @project.evolution %></p>
 
-  <div class="participation">
-  <%= link_to 'Participate to this project', new_project_candidate_path(@project), class: 'btn btn-apply' %>
-  </div>
-
   <% if current_user == @project.user %>
     <div class="candidates">
       <% @project.candidates.each do |candidate| %>
@@ -23,9 +21,15 @@
     </div>
   <% end  %>
 
-  <%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-edit' %>
+  <div class="participation text-center">
+  <%= link_to 'Participate to this project', new_project_candidate_path(@project), class: 'btn btn-apply' %>
+  </div>
 
+  <div class="text-center">
+    <%= link_to 'Edit project', edit_project_path(@project), class: 'btn btn-edit' %>
+  </div>
 </div>
-    <div class="bottom-page text-center">
-      <%= link_to 'Back to homepage', root_path, class: 'btn btn-menu' %>
-    </div>
+
+<div class="bottom-page text-center">
+  <%= link_to 'Back to homepage', root_path, class: 'btn btn-menu' %>
+</div>

@@ -15,9 +15,10 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    @project.user = current_user
     @project.title.downcase!
     if @project.save
-      redirect_to @project, notice: 'A new project was successfully created.'
+      redirect_to project_path(@project), notice: 'A new project was successfully created.'
     else
       render :new
     end
@@ -28,12 +29,13 @@ class ProjectsController < ApplicationController
   end
 
   def update
+    @project = Project.find(params[:id])
     if @project.update(project_params)
-      redirect_to @project, notice: 'Your project was successfully updated.'
+      redirect_to project_path(@project), notice: 'Your project was successfully updated.'
     else
       render :edit
     end
-end
+  end
 
   def api
     @title = params[:title]
