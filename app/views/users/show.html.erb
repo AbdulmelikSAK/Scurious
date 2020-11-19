@@ -9,27 +9,24 @@
 <div class="container project-info">
   <div class="user-info">
 
-  <h3>Username</h3>
+  <h4>Username</h4>
   <p><%= @user.username %></p>
 
-  <h3> Role</h3>
+  <h4> Role</h4>
   <p><%= @user.role %></p>
 
-  <% if current_user == @user %>
-    <h3> Password</h3>
-    <p> <%= link_to "Change my password",  edit_user_registration_path %></p>
-  <% end %>
-
-
-  <h3>Email</h3>
+  <h4>Email</h4>
   <p><%= @user.email %></p>
 
-  <h3> Password</h3>
-  <%= link_to "Change my password",  edit_user_registration_path, class: 'btn btn-edit' %>
-  </div>
+  <% if current_user == @user %>
+    <h4> Password</h4>
+    <p> <%= link_to "Change my password",  edit_user_registration_path, class: 'btn btn-edit'%></p>
+  <% end %>
+
+</div>
 
   <div class="user-profile">
-    <h3> Profile</h3>
+    <h4> Profile</h4>
     <p><%= @user.profile %></p>
 
     <% if current_user == @user %>

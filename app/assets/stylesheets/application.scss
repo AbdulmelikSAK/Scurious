@@ -38,23 +38,72 @@ a {
 
 .project-info {
   display: flex;
-  justify-content: center;
-  text-align: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  .user-info {
+    padding: 20px 14px;
+    margin: 12px;
+    width: 300px;
+    height: fit-content;
+    background-color: #F4F4F4;
+    box-shadow: 0px 2px 4px rgba(38, 38, 38, 0.2);
+    border-radius: 4px;
+    border: 1px solid #F4F4F4;
+    text-align: center;
+  }
+  .user-profile {
+    padding: 20px 14px;
+    margin: 12px;
+    text-align: justify;
+    width: 500px;
+  }
+  .description {
+    text-align: justify;
+    h3 {
+      text-align: center;
+    }
+  }
 }
 
-.user-profile {
-  padding: 20px 14px;
-  margin: 12px;
-  flex-grow: 1;
-}
-
-.user-info {
-  width: 600px;
+.evolution {
+  padding: 20px 20px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   height: fit-content;
-  padding: 20px 14px;
-  margin: 12px;
   background-color: #F4F4F4;
-  box-shadow: 0px 2px 4px rgba(38, 38, 38, 0.2);
+  box-shadow: 0px 2px 4px rgba(38, 38, 38, 0.5);
   border-radius: 4px;
   border: 1px solid #F4F4F4;
+  text-align: justify;
+}
+
+.applications {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  .candidates {
+    position: relative;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .photo-placeholder {
+    position: absolute;
+    right: 50px;
+    top: 30px;
+    width: 70px;
+    justify-content: center;
+    img {
+      border-radius: 50%;
+      border: 3px solid white;
+    }
+  }
+  .candidate-choice {
+    position: relative;
+    text-align: center;
+    img {
+      border-radius: 50%;
+      border: 3px solid white;
+    }
+  }
 }

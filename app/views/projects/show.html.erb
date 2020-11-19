@@ -19,28 +19,34 @@
     <h3>Evolution</h3>
     <p><%= @project.evolution %></p>
   </div>
+</div>
 
+<% if current_user == @project.user %>
   <div class="applications">
-    <% if current_user == @project.user %>
-      <h4>You received (<%= @project.candidates.where(status: "In progress").size %>) applications for your project</h4>
-      <div class="candidates">
-            <% @project.candidates.each do |candidate| %>
-            <% if candidate.status == "In progress" %>
-              <div class="candidate-card">
-                <h5><%= candidate.user.username %></h5>
-                <p><%= candidate.user.role %></p>
-                <p><%= candidate.message %></p>
-                <% candidate.user.photo.attached? ? key = candidate.user.photo.key : key = "19jhc3a8utphedgglcuwlic9vpty" %>
-                <%= cl_image_tag(key, :gravity=>"face:center", :height=>80, :width=>80, :crop=>"thumb")%>
-                <%= link_to "✅", project_candidate_accepted_path(@project, candidate) %>
-                <%= link_to "❌", project_candidate_refused_path(@project, candidate) %>
-              </div>
-              <% end %>
-            <% end %>
+    <h3>You received (<%= @project.candidates.where(status: "In progress").size %>) applications for your project</h3>
+    <div class="candidates">
+      <% @project.candidates.each do |candidate| %>
+      <% if candidate.status == "In progress" %>
+        <div class="candidate-card">
+          <h3><%= candidate.user.username %></h3>
+          <h5><%= candidate.user.role %></h5>
+          <p><%= candidate.message %></p>
+          <div class="photo-placeholder">
+            <% candidate.user.photo.attached? ? key = candidate.user.photo.key : key = "19jhc3a8utphedgglcuwlic9vpty" %>
+            <%= cl_image_tag(key, :gravity=>"face:center", :height=>80, :width=>80, :crop=>"thumb")%>
+          </div>
+          <div class="candidate-choice">
+          <%= link_to "✅", project_candidate_accepted_path(@project, candidate) %>
+          <%= link_to "❌", project_candidate_refused_path(@project, candidate) %>
+          </div>
+        </div>
+        <% end %>
       <% end %>
     </div>
   </div>
-</div>
+  <% end %>
+
+
 
 <div class="buttons">
   <% if current_user.role != "creator"%>

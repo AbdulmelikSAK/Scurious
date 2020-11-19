@@ -5,7 +5,7 @@
 
       <%= simple_form_for [@project, @candidate] do |f| %>
         <div class="form-inputs">
-          <%= f.input :message %>
+          <%= f.input :message, as: :text %>
           <%= f.submit "Send your application", class: 'btn btn-primary btn-block btn-large' %>
         </div>
       <% end %>
@@ -13,6 +13,6 @@
   </div>
 </div>
 
-<div class="col-6">
-<%= link_to 'Back', root_path %>
+<div class="bottom-page text-center">
+  <%= link_to 'Back to homepage', root_path, class: 'btn btn-menu' %>
 </div>
