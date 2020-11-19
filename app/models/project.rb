@@ -5,5 +5,6 @@ class Project < ApplicationRecord
   has_many :candidates
 
   validates :title, presence: true, uniqueness: true
+  validates :catchphrase, presence: true, length: { minimum: 5, maximum: 120 }
   validates :description, presence: true
 end

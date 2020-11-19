@@ -52,3 +52,22 @@ a.btn-edit {
     opacity: 0.6;
   }
 }
+
+a.btn-new {
+  width: fit-content;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border: 2.5px solid #fdc500;
+  text-decoration: none;
+  font-weight: bold;
+  vertical-align: middle;
+  color: #fdc500;
+  background-color: transparent;
+  cursor: pointer;
+  &:hover {
+    color: black;
+    border-color: #fdc500;
+    background-color: #fdc500;
+    opacity: 0.6;
+  }
+}

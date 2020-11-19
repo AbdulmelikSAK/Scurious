@@ -1,4 +1,4 @@
-<div class="container form-page">
+<div class="container">
 <h2>Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -9,6 +9,8 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
+    <%= f.input :username,
+                required: true %>
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -17,7 +19,9 @@
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :profile,
-                required: true %>
+                required: true,
+                as: :text,
+                placeholder: "Who are you? What are you looking for on Scurious?" %>
     <%= f.input :role,
                 collection: %w[creator developer angel],
                 required: true %>

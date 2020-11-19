@@ -2,6 +2,9 @@
   <div class="title-container">
     <h1><%= @project.title %></h1>
   </div>
+  <div class="avatar-placeholder">
+    <p>AVATAR</p>
+  </div>
 </div>
 
 
@@ -22,9 +25,9 @@
       <% if current_user == @project.user %>
           <% @project.candidates.each do |candidate| %>
           <div class="candidate-card">
-            <h5><%= candidate.user.email %></h5>
+            <h5><%= candidate.user.username %></h5>
             <p><%= candidate.user.role %></p>
-            <p><%= candidate.message.to_s.truncate_words(15) %></p>
+            <p><%= candidate.message %></p>
           </div>
           <% end %>
       <% end %>

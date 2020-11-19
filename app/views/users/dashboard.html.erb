@@ -1,5 +1,8 @@
 <div class="project-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1533651180995-3b8dcd33e834?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)">
   <h1>My Dashboard</h1>
+  <div class="avatar-placeholder">
+    <p>AVATAR</p>
+  </div>
 </div>
 
 <div class="container form-page">
@@ -8,4 +11,8 @@
   <% @projects.each do |project| %>
     <p><%= project.title %> : <%= project.evolution %></p>
   <% end %>
+</div>
+
+<div class="bottom-page text-center">
+  <%= link_to 'Back to homepage', root_path, class: 'btn btn-menu' %>
 </div>
