@@ -15,8 +15,10 @@
   <h3>Username</h3>
   <p><%= @user.username %></p>
 
-  <h3> Password</h3>
-  <p> <%= link_to "Change my password",  edit_user_registration_path %></p>
+  <% if current_user == @user %>
+    <h3> Password</h3>
+    <p> <%= link_to "Change my password",  edit_user_registration_path %></p>
+  <% end %>
 
     <h3> Role</h3>
   <p><%= @user.role %></p>
@@ -24,9 +26,11 @@
      <h3> Profile</h3>
   <p><%= @user.profile %></p>
 
-  <div class="text-center">
-    <%= link_to 'Edit profile', edit_user_path(@user), class: 'btn btn-edit' %>
-  </div>
+  <% if current_user == @user %>
+    <div class="text-center">
+      <%= link_to 'Edit profile', edit_user_path(@user), class: 'btn btn-edit' %>
+    </div>
+  <% end %>
 </div>
 
 <div class="bottom-page text-center">

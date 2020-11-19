@@ -9,6 +9,7 @@ class CandidatesController < ApplicationController
   def create
     @user = current_user
     @candidate = Candidate.new(candidate_params)
+    @candidate.status = "In progress"
     @project = Project.find(params[:project_id])
     @candidate.project = @project
     @candidate.user = @user
@@ -22,7 +23,7 @@ class CandidatesController < ApplicationController
   def accepted
     @candidate = Candidate.find(params[:candidate_id])
     @project = Project.find(params[:project_id])
-    @candidate.status = "accepted"
+    @candidate.status = "Accepted"
     case @candidate.user.role
     when "developer"
       @project.dev = @candidate.user
@@ -36,7 +37,7 @@ class CandidatesController < ApplicationController
 
   def refused
     @candidate = Candidate.find(params[:candidate_id])
-    @candidate.status = "refused"
+    @candidate.status = "Refused"
     @candidate.save
     redirect_to project_path(@candidate.project)
   end
