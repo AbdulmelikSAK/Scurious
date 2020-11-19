@@ -21,18 +21,14 @@
 //   });
 // };
 
-const results = document.querySelector('.cards-results');
 
 const searchProject = (event) => {
-  console.log("test")
+  const results = document.querySelector('.cards-results');
   const query = event.currentTarget.value;
   fetch(`/api/projects?title=${query}`)
     .then(response => response.json())
     .then((data) => {
-      console.log('je suis la')
-      console.log(data)
       results.innerHTML = '';
-      console.log(results)
       data.forEach((project) => {
         const card = project.card;
         results.insertAdjacentHTML("beforeend", card);
@@ -40,5 +36,11 @@ const searchProject = (event) => {
     });
 };
 
-export { searchProject };
+const initSearch = () => {
+  const input = document.querySelector("#search-input");
+  if (input)
+    input.addEventListener("keyup", searchProject);
+};
+
+export { initSearch };
 

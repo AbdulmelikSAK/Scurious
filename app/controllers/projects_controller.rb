@@ -16,7 +16,6 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     @project.user = current_user
-    @project.title.downcase!
     if @project.save
       redirect_to project_path(@project), notice: 'A new project was successfully created.'
     else
@@ -39,7 +38,7 @@ class ProjectsController < ApplicationController
 
   def api
     @title = params[:title]
-    @results = Project.all.where("title LIKE ?", "%#{@title}%")
+    @results = Project.where("title ILIKE ?", "%#{@title}%")
     @display_result = @results.map do |project|
       {
         card: render_to_string(partial: 'projectcard', locals: { project: project })
