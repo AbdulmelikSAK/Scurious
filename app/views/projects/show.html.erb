@@ -16,15 +16,19 @@
     <p><%= @project.evolution %></p>
   </div>
 
-  <div class="candidates">
-    <% if current_user == @project.user %>
-        <% @project.candidates.each do |candidate| %>
-        <div class="candidate-card">
-          <h5><%= candidate.user.email %></h5>
-          <p><%= candidate.message.to_s.truncate_words(15) %></p>
-        </div>
-        <% end %>
-    <% end %>
+  <div class="applications">
+    <h4>Your received ? applications for your project</h4>
+    <div class="candidates">
+      <% if current_user == @project.user %>
+          <% @project.candidates.each do |candidate| %>
+          <div class="candidate-card">
+            <h5><%= candidate.user.email %></h5>
+            <p><%= candidate.user.role %></p>
+            <p><%= candidate.message.to_s.truncate_words(15) %></p>
+          </div>
+          <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 
