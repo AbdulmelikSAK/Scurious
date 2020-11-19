@@ -36,4 +36,24 @@ a {
   margin-right: 40px;
 }
 
+.project-info {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 
+.user-profile {
+  padding: 20px 14px;
+  margin: 12px;
+}
+
+.user-info {
+  width: 800px;
+  height: fit-content;
+  padding: 20px 14px;
+  margin: 12px;
+  background-color: #F4F4F4;
+  box-shadow: 0px 2px 4px rgba(38, 38, 38, 0.2);
+  border-radius: 4px;
+  border: 1px solid #F4F4F4;
+}

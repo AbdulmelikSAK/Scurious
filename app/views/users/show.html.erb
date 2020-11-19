@@ -2,27 +2,30 @@
   <h1> <%= @user.username %>'s page </h1>
 </div>
 
-
-
 <div class="container project-info">
-  <h3>Email</h3>
-  <p><%= @user.email %></p>
+  <div class="user-info">
 
   <h3>Username</h3>
   <p><%= @user.username %></p>
 
-  <h3> Password</h3>
-  <p> <%= link_to "Change my password",  edit_user_registration_path %></p>
-
-    <h3> Role</h3>
+  <h3> Role</h3>
   <p><%= @user.role %></p>
 
-     <h3> Profile</h3>
-  <p><%= @user.profile %></p>
+  <h3>Email</h3>
+  <p><%= @user.email %></p>
 
-  <div class="text-center">
-    <%= link_to 'Edit profile', edit_user_path(@user), class: 'btn btn-edit' %>
+  <h3> Password</h3>
+  <%= link_to "Change my password",  edit_user_registration_path, class: 'btn btn-edit' %>
   </div>
+
+  <div class="user-profile">
+    <h3> Profile</h3>
+    <p><%= @user.profile %></p>
+    <div class="text-center">
+      <%= link_to 'Edit profile', edit_user_path(@user), class: 'btn btn-edit' %>
+    </div>
+  </div>
+
 </div>
 
 <div class="bottom-page text-center">
