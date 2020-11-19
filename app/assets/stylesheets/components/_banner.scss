@@ -28,6 +28,7 @@
 }
 
 .project-banner {
+  position: relative;
   background-size: cover;
   background-position: center;
   height: 300px;
@@ -48,4 +49,13 @@
     text-align: left;
     padding-left: 20px;
   }
+}
+
+.project-banner .avatar-placeholder {
+  position: absolute;
+  right: 70px;
+  bottom: -20px;
+  width: 70px;
+  justify-content: center;
+  border: 2px solid black;
 }
