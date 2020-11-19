@@ -5,6 +5,7 @@
 <div class="container form-page">
   <%= simple_form_for (@user) do |f| %>
       <%= f.input :profile %>
+      <%= f.input :photo, as: :file %>
       <%= f.button :submit, "Save changes", class: 'btn btn-primary btn-block'  %>
   <% end %>
 </div>

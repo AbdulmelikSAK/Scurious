@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'users#dashboard', as: :dashboard
 
   resources :projects, except: [:destroy, :index] do
-    resources :candidates, only: [:new, :create]
+    resources :candidates, only: [:new, :create] do
+      get '/accepted', to: 'candidates#accepted'
+      get '/refused', to: 'candidates#refused'
+    end
   end
   root to: 'projects#index'
   get 'api/projects', to: 'projects#api', as: :api
