@@ -19,6 +19,28 @@ class CandidatesController < ApplicationController
     end
   end
 
+  def accepted
+    @candidate = Candidate.find(params[:candidate_id])
+    @project = Project.find(params[:project_id])
+    @candidate.status = "accepted"
+    case @candidate.user.role
+    when "developer"
+      @project.dev = @candidate.user
+    when "angel"
+      @project.angel = @candidate.user
+    end
+    @candidate.save
+    @project.save
+    redirect_to project_path(@project)
+  end
+
+  def refused
+    @candidate = Candidate.find(params[:candidate_id])
+    @candidate.status = "refused"
+    @candidate.save
+    redirect_to project_path(@candidate.project)
+  end
+
   private
 
   def candidate_params

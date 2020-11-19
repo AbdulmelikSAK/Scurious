@@ -54,8 +54,11 @@
 .project-banner .avatar-placeholder {
   position: absolute;
   right: 70px;
-  bottom: -20px;
+  bottom: -40px;
   width: 70px;
   justify-content: center;
-  border: 2px solid black;
+  img {
+    border-radius: 50%;
+    border: 3px solid white;
+  }
 }
