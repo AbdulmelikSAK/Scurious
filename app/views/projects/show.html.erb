@@ -21,33 +21,55 @@
   </div>
 
   <div class="applications">
-    <h4>Your received ? applications for your project</h4>
-    <div class="candidates">
-      <% if current_user == @project.user %>
-          <% @project.candidates.each do |candidate| %>
-          <div class="candidate-card">
-            <h5><%= candidate.user.username %></h5>
-            <p><%= candidate.user.role %></p>
-            <p><%= candidate.message %></p>
-            <% candidate.user.photo.attached? ? key = candidate.user.photo.key : key = "19jhc3a8utphedgglcuwlic9vpty" %>
-            <%= cl_image_tag(key, :gravity=>"face:center", :height=>80, :width=>80, :crop=>"thumb")%>
-            <%= link_to "✅", project_candidate_accepted_path(@project, candidate) %>
-            <%= link_to "❌", project_candidate_refused_path(@project, candidate) %>
-          </div>
-          <% end %>
+    <% if current_user == @project.user %>
+      <h4>You received (<%= @project.candidates.where(status: "In progress").size %>) applications for your project</h4>
+      <div class="candidates">
+            <% @project.candidates.each do |candidate| %>
+            <% if candidate.status == "In progress" %>
+              <div class="candidate-card">
+                <h5><%= candidate.user.username %></h5>
+                <p><%= candidate.user.role %></p>
+                <p><%= candidate.message %></p>
+                <% candidate.user.photo.attached? ? key = candidate.user.photo.key : key = "19jhc3a8utphedgglcuwlic9vpty" %>
+                <%= cl_image_tag(key, :gravity=>"face:center", :height=>80, :width=>80, :crop=>"thumb")%>
+                <%= link_to "✅", project_candidate_accepted_path(@project, candidate) %>
+                <%= link_to "❌", project_candidate_refused_path(@project, candidate) %>
+              </div>
+              <% end %>
+            <% end %>
       <% end %>
     </div>
   </div>
 </div>
 
 <div class="buttons">
-  <div class="participation text-center">
-  <%= link_to 'Participate to this project', new_project_candidate_path(@project), class: 'btn btn-apply' %>
-  </div>
-
-  <div class="edition text-center">
-  <%= link_to 'Edit this project', edit_project_path(@project), class: 'btn btn-edit' %>
-  </div>
+  <% if current_user.role != "creator"%>
+    <% result = true %>
+    <% @project.candidates.each { |candidate| candidate.user == current_user ? result = false : result = true } %>
+    <% if result %>
+      <% if current_user.role == "developer" && @project.dev.nil?%>
+          <div class="participation text-center">
+            <%= link_to 'Participate to this project', new_project_candidate_path(@project), class: 'btn btn-apply' %>
+          </div>
+        <% elsif current_user.role == "angel" && @project.angel.nil?%>
+          <div class="participation text-center">
+            <%= link_to 'Participate to this project', new_project_candidate_path(@project), class: 'btn btn-apply' %>
+          </div>
+      <% else %>
+        <div class="participation text-center">
+          <p>This project already has a <%= current_user.role %></p>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="participation text-center">
+        <p>You have already applied</p>
+      </div>
+    <% end %>
+  <% elsif current_user == @project.user %>
+    <div class="edition text-center">
+      <%= link_to 'Edit this project', edit_project_path(@project), class: 'btn btn-edit' %>
+    </div>
+  <% end %>
 </div>
 
 <div class="bottom-page text-center">

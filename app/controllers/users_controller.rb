@@ -7,11 +7,11 @@ class UsersController < ApplicationController
     @user = current_user
     case @user.role
     when "creator"
-      @projects = Project.all.where(user: @user)
+      @projects = Project.where(user: @user)
     when "developer"
-      @projects = Project.all.where(dev: @user)
+      @projects = Project.where(dev: @user)
     when "angel"
-      @projects = Project.all.where(angel: @user)
+      @projects = Project.where(angel: @user)
     end
   end
 
