@@ -11,4 +11,6 @@ class User < ApplicationRecord
 
   has_many :projects
   has_many :candidates
+
+  has_one_attached :photo
 end

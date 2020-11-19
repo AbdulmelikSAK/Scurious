@@ -2,8 +2,9 @@
   <div class="title-container">
     <h1><%= @project.title %></h1>
   </div>
-  <div class="avatar-placeholder">
-    <p>AVATAR</p>
+   <div class="avatar-placeholder">
+    <% @project.user.photo.attached? ? key = @project.user.photo.key : key = "19jhc3a8utphedgglcuwlic9vpty" %>
+    <%= cl_image_tag(key, :gravity=>"face:center", :height=>80, :width=>80, :crop=>"thumb")%>
   </div>
 </div>
 
@@ -28,6 +29,10 @@
             <h5><%= candidate.user.username %></h5>
             <p><%= candidate.user.role %></p>
             <p><%= candidate.message %></p>
+            <% candidate.user.photo.attached? ? key = candidate.user.photo.key : key = "19jhc3a8utphedgglcuwlic9vpty" %>
+            <%= cl_image_tag(key, :gravity=>"face:center", :height=>80, :width=>80, :crop=>"thumb")%>
+            <%= link_to "✅", project_candidate_accepted_path(@project, candidate) %>
+            <%= link_to "❌", project_candidate_refused_path(@project, candidate) %>
           </div>
           <% end %>
       <% end %>
