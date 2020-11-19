@@ -19,11 +19,11 @@
   <div class="candidates">
     <% if current_user == @project.user %>
         <% @project.candidates.each do |candidate| %>
-        <div class="candidate">
+        <div class="candidate-card">
           <h5><%= candidate.user.email %></h5>
           <p><%= candidate.message.to_s.truncate_words(15) %></p>
+        </div>
         <% end %>
-      </div>
     <% end %>
   </div>
 </div>
