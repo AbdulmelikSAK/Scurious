@@ -1,4 +1,4 @@
-<div class="project-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1508758980773-0d840264575d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)">
+<div class="project-banner" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1508758980773-0d840264575d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)">
   <div class="title-container">
     <h1><%= @project.title %></h1>
   </div>
@@ -6,27 +6,39 @@
 
 
 <div class="container project-info">
-  <h3>Description</h3>
-  <p><%= @project.description %></p>
+  <div class="description">
+    <h3>Description</h3>
+    <p><%= @project.description %></p>
+  </div>
 
-  <h3>Evolution</h3>
-  <p><%= @project.evolution %></p>
+  <div class="evolution">
+    <h3>Evolution</h3>
+    <p><%= @project.evolution %></p>
+  </div>
 
-  <% if current_user == @project.user %>
+  <div class="applications">
+    <h4>Your received ? applications for your project</h4>
     <div class="candidates">
-      <% @project.candidates.each do |candidate| %>
-        <p><%= candidate.user.email %></p>
-        <p><%= candidate.message %></p>
+      <% if current_user == @project.user %>
+          <% @project.candidates.each do |candidate| %>
+          <div class="candidate-card">
+            <h5><%= candidate.user.email %></h5>
+            <p><%= candidate.user.role %></p>
+            <p><%= candidate.message.to_s.truncate_words(15) %></p>
+          </div>
+          <% end %>
       <% end %>
     </div>
-  <% end  %>
+  </div>
+</div>
 
+<div class="buttons">
   <div class="participation text-center">
   <%= link_to 'Participate to this project', new_project_candidate_path(@project), class: 'btn btn-apply' %>
   </div>
 
-  <div class="text-center">
-    <%= link_to 'Edit project', edit_project_path(@project), class: 'btn btn-edit' %>
+  <div class="edition text-center">
+  <%= link_to 'Edit this project', edit_project_path(@project), class: 'btn btn-edit' %>
   </div>
 </div>
 

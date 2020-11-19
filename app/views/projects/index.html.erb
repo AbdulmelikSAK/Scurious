@@ -10,15 +10,14 @@
 
 <div class="container">
 
-  <h2 class="text-center">What's in it for you ?</h2>
+  <h2 class="text-center">Here, we gather three kind of Scurious people : </h2>
 
   <div class="cards flex-wrap d-flex justify-content-around">
     <div class="card">
       <img src="https://cdn.pixabay.com/photo/2017/06/10/07/21/chat-2389223_1280.png" alt="">
-      <h4>Project ideas</h4>
-      <p>"I have a dream" is what you keep thinking ? <br>
-      <a><%= link_to "Share it here", new_project_path %></a><br>to make it real 🌿</p>
-      <a></a>
+      <h4>Idea generator</h4>
+      <p>"I have a dream" is what you keep thinking ?<br>
+      <%= link_to " Share it here ", new_project_path %><br>to make it real 🌿</p>
     </div>
 
     <div class="card">
@@ -38,21 +37,26 @@
 <div class="projects-container text-center">
   <%= simple_form_for :search, url: root_path, method: :get do |f| %>
     <div id="search-data" class="search-form-control form-group mx-5">
-      <input class="form-control string required text-center" id="search-input" type="text" name="search[query]" placeholder="Search a project here" />
+      <input class="form-control string required text-center" id="search-input" type="text" name="search[query]" placeholder="Search a project here!" />
 <!--       <button name="button" type="submit" class="btn btn-flat">
         <i class="fas fa-search"></i> Search
       </button> -->
     </div>
   <% end %>
 
-  <div class="cards cards-results flex-wrap d-flex justify-content-around">
+  <div class="cards cards-results flex-wrap d-flex justify-content-center">
 
     <% @projects.each do |project| %>
       <%= render partial: 'projectcard', locals: { project: project } %>
     <% end %>
 
   </div>
+
+  <div class="text-center">
+    <%= link_to " Share a new project ", new_project_path, class: 'btn btn-apply' %>
+  </div>
 </div>
+
    <div class="bottom-page text-center">
     <%= link_to 'Back to the top', root_path, class: 'btn btn-menu' %>
   </div>

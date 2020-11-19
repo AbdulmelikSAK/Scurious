@@ -1,6 +1,6 @@
 <%= simple_form_for (@project) do |f| %>
-        <%= f.input :title %>
-        <%= f.input :description %>
-        <%= f.input :evolution %>
-        <%= f.button :submit, class: 'btn btn-primary' %>
-      <% end %>
+  <%= f.input :title %>
+  <%= f.input :description, as: :text, placeholder: "PITCH YOUR PROJET to scurious minds here! Explain the pain, target and solution." %>
+  <%= f.input :evolution, as: :text, placeholder: "Fill this field ONLY if your project has already started."%>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>
