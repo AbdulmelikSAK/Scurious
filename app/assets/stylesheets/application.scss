@@ -45,10 +45,11 @@ a {
 .user-profile {
   padding: 20px 14px;
   margin: 12px;
+  flex-grow: 1;
 }
 
 .user-info {
-  width: 800px;
+  width: 600px;
   height: fit-content;
   padding: 20px 14px;
   margin: 12px;
