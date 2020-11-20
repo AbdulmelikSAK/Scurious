@@ -72,18 +72,7 @@ a {
 }
 
 .info-details.project-details {
-  .description {
-      text-align: justify;
-      p {
-        margin-bottom: 50px;
-      }
-      h3 {
-        text-align: center;
-      }
-    }
-}
-
-  .evolution {
+  .card-details {
     padding: 20px 20px;
     margin-top: 12px;
     margin-bottom: 12px;
@@ -93,8 +82,13 @@ a {
     border-radius: 4px;
     border: 1px solid #F4F4F4;
     text-align: justify;
+    p {
+      margin-bottom: 50px;
+    }
     h3 {
       text-align: center;
+      margin-bottom: 15px;
+      color: #fdc500;
     }
     h4 {
       font-weight: bold;
@@ -102,6 +96,8 @@ a {
       color: #fdc500;
     }
   }
+}
+
 
 
 .applications {

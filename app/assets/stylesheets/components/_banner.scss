@@ -14,11 +14,11 @@
   margin-right: 7px;
   width: 100%;
   color: white;
+  h1 {
+    font-weight: bold
+  }
 }
 
-.banner-container h1 {
-  font-weight: bold
-}
 
 .banner-container .slogan {
   position: absolute;
@@ -41,14 +41,13 @@
   color: white;
   .username {
     position: absolute;
-    top: 30px;
-    right: 30px;
+    top: 50px;
+    right: 70px;
   }
 }
 
 .project-banner .title-container {
   width: 40%;
-
   h1 {
     margin-top: revert;
     text-align: left;

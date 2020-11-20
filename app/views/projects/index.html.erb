@@ -15,7 +15,7 @@
     <div class="card">
       <img src="https://cdn.pixabay.com/photo/2017/06/10/07/21/chat-2389223_1280.png" alt="">
       <h4>Idea generator</h4>
-      <p>"I have a dream" is what you keep thinking ?
+      <p>"I have a dream" is what you keep thinking ?<br>
       <% if current_user %>
         <% if current_user.role == "creator" %>
           <%= link_to " Share it here ", new_project_path %>
