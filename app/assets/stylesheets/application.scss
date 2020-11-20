@@ -14,8 +14,14 @@
 @import "pages/candidates";
 
 body {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   font-family: Work sans;
+  min-height: 100vh;
+  main {
+    flex-grow: 1;
+  }
 }
 
 h1, h2, h3, h4 {
@@ -77,20 +83,26 @@ a {
     }
 }
 
-.evolution {
-  padding: 20px 20px;
-  margin-top: 12px;
-  margin-bottom: 12px;
-  height: fit-content;
-  background-color: #F4F4F4;
-  box-shadow: 0px 2px 4px rgba(38, 38, 38, 0.5);
-  border-radius: 4px;
-  border: 1px solid #F4F4F4;
-  text-align: justify;
-  h3 {
-    text-align: center;
+  .evolution {
+    padding: 20px 20px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    height: fit-content;
+    background-color: #F4F4F4;
+    box-shadow: 0px 2px 4px rgba(38, 38, 38, 0.5);
+    border-radius: 4px;
+    border: 1px solid #F4F4F4;
+    text-align: justify;
+    h3 {
+      text-align: center;
+    }
+    h4 {
+      font-weight: bold;
+      text-align: center;
+      color: #fdc500;
+    }
   }
-}
+
 
 .applications {
   margin-top: 30px;

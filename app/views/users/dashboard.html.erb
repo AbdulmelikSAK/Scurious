@@ -1,4 +1,4 @@
-<div class="project-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1533651180995-3b8dcd33e834?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)">
+<div class="project-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.1)), url(https://images.unsplash.com/photo-1518770352423-dce09a3d3307?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2767&q=80)">
   <h1>My Dashboard</h1>
   <div class="avatar-user">
      <% @user.photo.attached? ? key = @user.photo.key : key = "19jhc3a8utphedgglcuwlic9vpty" %>
@@ -6,15 +6,19 @@
   </div>
 </div>
 
-<div class="container form-page">
-  <h3>I'm a <%= @user.role %> and I joined :</h3>
+<div class="container info-details">
+  <h3>My projects as a <strong><%= @user.role %></strong> :</h3><br>
 
   <% @projects.each do |project| %>
-    <h5><%= project.title %> : </h5>
-      <p style="white-space: pre-wrap;"><%= project.evolution %>
+  <div class="evolution">
+    <h4><%= project.title %> : </h4>
+      <p style="white-space: pre-wrap;"><%= project.evolution %></p>
+  </div>
   <% end %>
 </div>
 
 <div class="bottom-page text-center">
   <%= link_to 'Back to homepage', root_path, class: 'btn btn-menu' %>
 </div>
+
+

@@ -9,6 +9,7 @@
 }
 
 .banner-container {
+  position: relative;
   padding: 15px 10px;
   margin-left: 7px;
   margin-right: 7px;
@@ -23,6 +24,7 @@
 .banner-container .slogan {
   position: absolute;
   right: 20px;
+  bottom: 10px;
   text-align: right;
   width: 400px;
 }
