@@ -4,18 +4,22 @@
   </div>
    <div class="avatar-user">
     <% @project.user.photo.attached? ? key = @project.user.photo.key : key = "19jhc3a8utphedgglcuwlic9vpty" %>
-    <%= cl_image_tag(key, :gravity=>"face:center", :height=>80, :width=>80, :crop=>"thumb")%>
+    <%= link_to cl_image_tag(key, :gravity=>"face:center", :height=>80, :width=>80, :crop=>"thumb"), user_path(@project.user)%>
   </div>
 </div>
 
 
 <div class="container info-details project-details">
-  <div class="description">
+  <div class="text-center">
+    <h4>Creator : <%= link_to @project.user.username, user_path(@project.user), style: "text-decoration: none; color: black; font-weight: bold;" %> </h4>
+  </div>
+
+  <div class="card-details">
     <h3>Description</h3>
     <p style="white-space: pre-wrap;"><%= @project.description %></p>
   </div>
 
-  <div class="evolution">
+  <div class="card-details">
     <h3>Evolution</h3>
     <p style="white-space: pre-wrap;"><%= @project.evolution %></p>
   </div>
@@ -33,7 +37,7 @@
           <p style="white-space: pre-wrap;"><%= candidate.message %></p>
           <div class="avatar-user">
             <% candidate.user.photo.attached? ? key = candidate.user.photo.key : key = "19jhc3a8utphedgglcuwlic9vpty" %>
-            <%= cl_image_tag(key, :gravity=>"face:center", :height=>80, :width=>80, :crop=>"thumb")%>
+            <%= link_to cl_image_tag(key, :gravity=>"face:center", :height=>80, :width=>80, :crop=>"thumb"), user_path(candidate.user) %>
           </div>
           <div class="candidate-choice">
           <%= link_to "", project_candidate_accepted_path(@project, candidate), class: "fas fa-check-circle", style: "color: green; font-size: 40px;" %>

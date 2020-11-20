@@ -6,12 +6,12 @@
   </div>
 </div>
 
-<div class="container info-details">
+<div class="container info-details project-details">
   <h3>My projects as a <strong><%= @user.role %></strong> :</h3><br>
 
   <% @projects.each do |project| %>
-  <div class="evolution">
-    <h4><%= project.title %> : </h4>
+  <div class="card-details">
+    <h4><%= link_to project.title, project_path(project), style: "text-decoration: none; color: #fdc500" %> : </h4>
       <p style="white-space: pre-wrap;"><%= project.evolution %></p>
   </div>
   <% end %>
