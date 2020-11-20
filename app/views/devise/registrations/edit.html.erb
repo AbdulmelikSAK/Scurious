@@ -24,13 +24,15 @@
                 input_html: { autocomplete: "current-password" } %>
   </div>
 
-   <%= f.submit "Update", class: 'btn btn-menu'%>
+    <%= f.button :submit, "Update password", class: 'btn btn-outline-success' %>
+
 <% end %>
 
-
-<p>Unhappy?
+<div class="bottom-page">
 <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-menu'%></p>
-
-<%= link_to "Back", :back %>
+</div>
+<div class="bottom-page text-center">
+  <%= link_to 'Back to homepage', root_path, class: 'btn btn-menu' %>
+</div>
 
 </div>

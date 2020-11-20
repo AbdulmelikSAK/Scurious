@@ -39,6 +39,11 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 25px 25px;
   color: white;
+  .username {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
 }
 
 .project-banner .title-container {
@@ -51,14 +56,10 @@
   }
 }
 
-.project-banner .avatar-placeholder {
+.project-banner .avatar-user {
   position: absolute;
   right: 70px;
   bottom: -40px;
   width: 70px;
   justify-content: center;
-  img {
-    border-radius: 50%;
-    border: 3px solid white;
-  }
 }

@@ -2,22 +2,22 @@
   <div class="title-container">
     <h1><%= @project.title %></h1>
   </div>
-   <div class="avatar-placeholder">
+   <div class="avatar-user">
     <% @project.user.photo.attached? ? key = @project.user.photo.key : key = "19jhc3a8utphedgglcuwlic9vpty" %>
     <%= cl_image_tag(key, :gravity=>"face:center", :height=>80, :width=>80, :crop=>"thumb")%>
   </div>
 </div>
 
 
-<div class="container project-info">
+<div class="container info-details project-details">
   <div class="description">
     <h3>Description</h3>
-    <p><%= @project.description %></p>
+    <p style="white-space: pre-wrap;"><%= @project.description %></p>
   </div>
 
   <div class="evolution">
     <h3>Evolution</h3>
-    <p><%= @project.evolution %></p>
+    <p style="white-space: pre-wrap;"><%= @project.evolution %></p>
   </div>
 </div>
 
@@ -30,14 +30,14 @@
         <div class="candidate-card">
           <h3><%= candidate.user.username %></h3>
           <h5><%= candidate.user.role %></h5>
-          <p><%= candidate.message %></p>
-          <div class="photo-placeholder">
+          <p style="white-space: pre-wrap;"><%= candidate.message %></p>
+          <div class="avatar-user">
             <% candidate.user.photo.attached? ? key = candidate.user.photo.key : key = "19jhc3a8utphedgglcuwlic9vpty" %>
             <%= cl_image_tag(key, :gravity=>"face:center", :height=>80, :width=>80, :crop=>"thumb")%>
           </div>
           <div class="candidate-choice">
-          <%= link_to "✅", project_candidate_accepted_path(@project, candidate) %>
-          <%= link_to "❌", project_candidate_refused_path(@project, candidate) %>
+          <%= link_to "", project_candidate_accepted_path(@project, candidate), class: "fas fa-check-circle", style: "color: green; font-size: 40px;" %>
+          <%= link_to "", project_candidate_refused_path(@project, candidate), class: "fas fa-times-circle", style: "color: red; font-size: 40px;"%>
           </div>
         </div>
         <% end %>

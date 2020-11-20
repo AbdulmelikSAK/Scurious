@@ -2,7 +2,7 @@
   text-align: center;
   padding: 15px;
   background-color: #2c2b2b;
-  // position: static;
+  // position: absolute;
   // bottom: 0;
   width: 100%;
 }
@@ -13,11 +13,7 @@
 }
 
 .links a {
-  color: green;
+  color: #67D69A;
   width: 30px;
   font-size: 18px;
-}
-
-.links .fa-heart {
-  color: red;
 }

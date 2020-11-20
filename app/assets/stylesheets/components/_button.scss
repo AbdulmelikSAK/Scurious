@@ -2,6 +2,7 @@ a.btn-menu {
   width: fit-content;
   padding: 10px 15px;
   margin-bottom: 10px;
+  margin-top: 10px;
   border: 1.5px solid black;
   text-decoration: none;
   vertical-align: middle;
@@ -12,7 +13,7 @@ a.btn-menu {
     color: white;
     border-color: black;
     background-color: black;
-    opacity: 0.5;
+    opacity: 0.6;
   }
 }
 
@@ -20,17 +21,16 @@ a.btn-apply {
   width: fit-content;
   padding: 6px 10px;
   margin-bottom: 10px;
-  border: 1.5px solid green;
+  border: 1.5px solid #67D69A;
   text-decoration: none;
   vertical-align: middle;
-  color: green;
+  color: #67D69A;
   background-color: transparent;
   cursor: pointer;
   &:hover {
     color: black;
-    border-color: green;
-    background-color: green;
-    opacity: 0.6;
+    border-color: #67D69A;
+    background-color: #67D69A;
   }
 }
 
@@ -49,7 +49,6 @@ a.btn-edit {
     color: black;
     border-color: orange;
     background-color: orange;
-    opacity: 0.6;
   }
 }
 

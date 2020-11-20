@@ -5,8 +5,8 @@
 
       <%= simple_form_for [@project, @candidate] do |f| %>
         <div class="form-inputs">
-          <%= f.input :message, as: :text %>
-          <%= f.submit "Send your application", class: 'btn btn-primary btn-block btn-large' %>
+          <%= f.input :message %>
+          <%= f.button :submit, "Send", class: 'btn btn-outline-success' %>
         </div>
       <% end %>
     </div>
