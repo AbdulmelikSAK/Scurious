@@ -1,7 +1,6 @@
 <div class="banner" style="background-image: url(https://images.unsplash.com/photo-1504006833117-8886a355efbf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)">
   <div class=banner-container>
     <h1>Welcome to <em>Scurious</em></h1>
-    <br><br><br><br>
     <div class="slogan">
       <h4>where curiosity <em>pushes</em> ideas <br> to become reality.</h4>
     </div>
@@ -16,7 +15,7 @@
     <div class="card">
       <img src="https://cdn.pixabay.com/photo/2017/06/10/07/21/chat-2389223_1280.png" alt="">
       <h4>Idea generator</h4>
-      <p>"I have a dream" is what you keep thinking ?<br>
+      <p>"I have a dream" is what you keep thinking ?
       <% if current_user %>
         <% if current_user.role == "creator" %>
           <%= link_to " Share it here ", new_project_path %>

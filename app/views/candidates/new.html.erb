@@ -6,13 +6,13 @@
       <%= simple_form_for [@project, @candidate] do |f| %>
         <div class="form-inputs">
           <%= f.input :message %>
-          <%= f.submit "Send your application", class: 'btn btn-primary btn-block btn-large' %>
+          <%= f.button :submit, "Send", class: 'btn btn-outline-success' %>
         </div>
       <% end %>
     </div>
   </div>
 </div>
 
-<div class="col-6">
-<%= link_to 'Back', root_path %>
+<div class="bottom-page text-center">
+  <%= link_to 'Back to homepage', root_path, class: 'btn btn-menu' %>
 </div>

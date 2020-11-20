@@ -1,6 +1,6 @@
 <div class="project-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1533651180995-3b8dcd33e834?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)">
   <h1>My Dashboard</h1>
-  <div class="avatar-placeholder">
+  <div class="avatar-user">
      <% @user.photo.attached? ? key = @user.photo.key : key = "19jhc3a8utphedgglcuwlic9vpty" %>
     <%= cl_image_tag(key, :gravity=>"face:center", :height=>80, :width=>80, :crop=>"thumb")%>
   </div>
@@ -10,7 +10,8 @@
   <h3>I'm a <%= @user.role %> and I joined :</h3>
 
   <% @projects.each do |project| %>
-    <p><%= project.title %> : <%= project.evolution %></p>
+    <h5><%= project.title %> : </h5>
+      <p style="white-space: pre-wrap;"><%= project.evolution %>
   <% end %>
 </div>
 

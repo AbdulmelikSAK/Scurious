@@ -29,11 +29,99 @@ a {
 .container {
   width: 900px;
   margin: 0 auto;
+  height: fit-content;
 }
 
 .projects-container {
   margin-left: 40px;
   margin-right: 40px;
 }
+
+.info-details {
+  justify-content: space-around;
+}
+
+.info-details.user-details {
+  display: flex;
+  .user-info {
+    padding: 20px 14px;
+    margin: 25px;
+    width: 300px;
+    height: fit-content;
+    background-color: #F4F4F4;
+    box-shadow: 0px 2px 4px rgba(38, 38, 38, 0.2);
+    border-radius: 4px;
+    border: 1px solid #F4F4F4;
+    text-align: center;
+  }
+  .user-profile {
+    padding: 20px 14px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-right: 12px;
+    margin-left: 25px;
+    text-align: justify;
+    width: 500px;
+  }
+}
+
+.info-details.project-details {
+  .description {
+      text-align: justify;
+      p {
+        margin-bottom: 50px;
+      }
+      h3 {
+        text-align: center;
+      }
+    }
+}
+
+.evolution {
+  padding: 20px 20px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  height: fit-content;
+  background-color: #F4F4F4;
+  box-shadow: 0px 2px 4px rgba(38, 38, 38, 0.5);
+  border-radius: 4px;
+  border: 1px solid #F4F4F4;
+  text-align: justify;
+  h3 {
+    text-align: center;
+  }
+}
+
+.applications {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+    p {
+      margin-top: 20px;
+    }
+  .candidates {
+    position: relative;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .avatar-user {
+    position: absolute;
+    right: 50px;
+    top: 12px;
+    width: 70px;
+    justify-content: center;
+  }
+  .candidate-choice {
+    display: flex;
+    position: relative;
+    margin: 10px auto;
+    justify-content: space-around;
+    bottom: 0;
+  }
+}
+
+
+
 
 

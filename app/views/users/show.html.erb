@@ -1,36 +1,40 @@
 <div class="project-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1533651180995-3b8dcd33e834?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)">
-  <h1> <%= @user.username %>'s page </h1>
-   <div class="avatar-placeholder">
+  <h1 class="username"> <%= @user.username %>'s page </h1>
+   <div class="avatar-user">
      <% @user.photo.attached? ? key = @user.photo.key : key = "19jhc3a8utphedgglcuwlic9vpty" %>
     <%= cl_image_tag(key, :gravity=>"face:center", :height=>80, :width=>80, :crop=>"thumb")%>
   </div>
 </div>
 
+<div class="container info-details user-details">
+  <div class="user-info">
 
-
-<div class="container project-info">
-  <h3>Email</h3>
-  <p><%= @user.email %></p>
-
-  <h3>Username</h3>
+  <h4>Username</h4>
   <p><%= @user.username %></p>
 
-  <% if current_user == @user %>
-    <h3> Password</h3>
-    <p> <%= link_to "Change my password",  edit_user_registration_path %></p>
-  <% end %>
-
-    <h3> Role</h3>
+  <h4> Role</h4>
   <p><%= @user.role %></p>
 
-     <h3> Profile</h3>
-  <p><%= @user.profile %></p>
+  <h4>Email</h4>
+  <p><%= @user.email %></p>
 
   <% if current_user == @user %>
+    <h4> Password</h4>
+    <p> <%= link_to "Change my password",  edit_user_registration_path, class: 'btn btn-edit'%></p>
+  <% end %>
+
+</div>
+
+  <div class="user-profile">
+    <h4> Profile</h4>
+    <p style="white-space: pre-wrap;"><%= @user.profile %></p>
+
+    <% if current_user == @user %>
     <div class="text-center">
       <%= link_to 'Edit profile', edit_user_path(@user), class: 'btn btn-edit' %>
     </div>
   <% end %>
+  </div>
 </div>
 
 <div class="bottom-page text-center">
